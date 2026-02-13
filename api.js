@@ -11,10 +11,6 @@ if (req.url === "/klavesnice" && req.method === "GET") {
     
     return res.end(JSON.stringify(klavesnice));
 }
- 
- 
-
-3
 // Endpoint GET /klavesnice/:id – vrátí konkrétní klávesnici podle ID
 if (req.url.startsWith("/klavesnice/") && req.method === "GET") {
     const id = Number(req.url.split("/")[2]);
