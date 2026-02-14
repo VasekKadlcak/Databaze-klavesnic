@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{title}}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: .5rem; text-align: left; }
+    form .row { margin-bottom: .6rem; }
+    input { padding: .35rem; width: 100%; max-width: 420px; }
+    button { padding: .5rem .9rem; cursor: pointer; }
+    a { text-decoration: none; }
+    .muted { color: #666; font-size: .95rem; }
+    .actions a, .actions button { margin-right: .5rem; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1 style="margin:0">{{heading}}</h1>
+    <div><a href="/">Domů</a></div>
+  </div>
+
+  {{content}}
+
+  <script src="/public/app.js"></script>
+</body>
+</html>

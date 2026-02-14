@@ -1,0 +1,18 @@
+<div class="card">
+  <h2>Upravit uživatele #{{id}}</h2>
+
+  <form id="editForm" data-id="{{id}}">
+    <div class="row">
+      <label>Jméno:</label><br />
+      <input name="name" value="{{name}}" required />
+    </div>
+    <div class="row">
+      <label>Věk:</label><br />
+      <input type="number" name="age" min="0" value="{{age}}" required />
+    </div>
+
+    <button type="submit">Uložit (PUT)</button>
+    <a class="muted" href="/user/{{id}}">Zpět na detail</a>
+    <p class="muted" id="editMsg"></p>
+  </form>
+</div>
