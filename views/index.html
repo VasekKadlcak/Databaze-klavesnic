@@ -2,71 +2,134 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Databáze klávesnic</title>
+  <title>Seznam klávesnic</title>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f6f8;
+      background: #f4f6f8;
     }
 
-    h1 {
-      margin-bottom: 20px;
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
     }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      background: white;
+    header h1 {
+      margin: 0;
+      text-align: center;
     }
 
-    th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-
-    th {
-      background-color: #eaeaea;
-    }
-
-    a {
-      margin-right: 8px;
+    .pridatButton {
+      background: #2563eb;
+      padding: 8px 14px;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0077cc;
+      color: white;
+      font-size: 14px;
     }
 
-    button {
-      padding: 5px 10px;
+    .container {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .type {
+      font-size: 13px;
+      background: #e5e7eb;
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .actions a {
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .detail {
+      background: #e5e7eb;
+      color: black;
+    }
+    .detail:hover {
+      background: #d1d5db;
+      transition: 0.1s ease-in;
+    }
+
+    .edit {
+      background: #2563eb;
+      color: white;
+    }
+    .edit:hover {
+      background: #1d4ed8;
+      transition: 0.1s ease-in;
+    }
+    .delete{
+
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
       cursor: pointer;
+    }
+    .delete:hover {
+      background: #dc2626;
+      transition: 0.1s ease-in;
     }
   </style>
 </head>
 <body>
 
-  <h1>Databáze klávesnic</h1>
-  <a href="/nova">
-  <button>Přidat klávesnici</button>
-</a>
+<header>
+  <h1><em>Databáze Klávesnic</em></h1>
+  <a href="/nova" class="pridatButton">+ Přidat</a>
+</header>
 
-<br><br>
-
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Značka</th>
-        <th>Model</th>
-        <th>Typ</th>
-        <th>Cena</th>
-        <th>Akce</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{rows}}
-    </tbody>
-  </table>
+<div class="container">
+  {{klavesnice}}
+</div>
 
 </body>
 </html>

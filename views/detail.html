@@ -1,14 +1,90 @@
-<div class="card">
-<h1>Detail klávesnice</h1>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail klávesnice</title>
 
-<p><strong>Značka:</strong> {{znacka}}</p>
-<p><strong>Model:</strong> {{model}}</p>
-<p><strong>Typ:</strong> {{typ}}</p>
-<p><strong>Cena:</strong> {{cena}} Kč</p>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
 
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      width: 400px;
+    }
 
-  <div class="actions">
-    <a href="/edit/{{id}}">Upravit</a>
-    <button data-delete-id="{{id}}">Smazat</button>
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #0077cc;
+      margin-top: 15px;
+    }
+
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .back {
+      background: #ddd;
+      color: black;
+    }
+
+    .edit {
+      background: #0077cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>{{znacka}} {{model}}</h1>
+
+    <div class="info">
+      <span class="label">Typ:</span> {{typ}}
+    </div>
+
+    <div class="price">
+      {{cena}} Kč
+    </div>
+
+    <div class="actions">
+      <a href="/" class="back">Zpět</a>
+      <a href="/edit/{{id}}" class="edit">Upravit</a>
+    </div>
   </div>
-</div>
+
+</body>
+</html>
