@@ -6,11 +6,56 @@ function handlePages(req, res) {
   const url = new URL(req.url, `http://${req.headers.host}`);
 
   // ===============================
-  // HLAVNÍ STRÁNKA – seznam klávesnic
+  // STATICKÉ SOUBORY (public)
   // ===============================
-if (req.method === "GET" && url.pathname === "/") {
-    const klavesnice = store.getAll();
+if (req.method === "GET" && url.pathname.startsWith("/")) {
+  const publicPath = path.join(__dirname, "../public", url.pathname);
 
+  if (fs.existsSync(publicPath) && fs.statSync(publicPath).isFile()) {
+    const file = fs.readFileSync(publicPath);
+    res.writeHead(200);
+    res.end(file);
+    return true;
+  }
+}
+
+  // HLAVNÍ STRÁNKA – seznam klávesnic
+ 
+if (req.method === "GET" && url.pathname === "/") {
+
+  const vsechnyKlavesnice = store.getAll();
+
+// Max cena z celé databáze
+const maxRaw = vsechnyKlavesnice.length
+  ? Math.max(...vsechnyKlavesnice.map(k => k.cena))
+  : 0;
+
+const maxCenaDB = Math.ceil(maxRaw / 100) * 100;
+
+let klavesnice = [...vsechnyKlavesnice];
+
+  
+  
+
+  // ===== FILTROVÁNÍ =====
+  const minCenaRaw = url.searchParams.get("minCena");
+  const maxCenaRaw = url.searchParams.get("maxCena");
+  const typ = url.searchParams.get("typ");
+
+  const minCena = minCenaRaw ? Number(minCenaRaw) : null;
+  const maxCena = maxCenaRaw ? Number(maxCenaRaw) : null;
+
+  if (minCena !== null && !isNaN(minCena)) {
+    klavesnice = klavesnice.filter(k => k.cena >= minCena);
+  }
+
+  if (maxCena !== null && !isNaN(maxCena)) {
+    klavesnice = klavesnice.filter(k => k.cena <= maxCena);
+  }
+
+  if (typ && typ !== "Vše") {
+    klavesnice = klavesnice.filter(k => k.typ === typ);
+  }
   const cards = klavesnice
     .map((k) => `
       <div class="card">
@@ -35,7 +80,11 @@ if (req.method === "GET" && url.pathname === "/") {
       "utf-8"
     );
 
-    const html = template.replace("{{klavesnice}}", cards);
+    let html = template
+      .replace("{{klavesnice}}", cards)
+      .replace(/{{maxCenaDB}}/g, maxCenaDB)
+      .replace(/{{minAktualni}}/g, minCena ?? 0)
+      .replace(/{{maxAktualni}}/g, maxCena ?? maxCenaDB);
 
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
     res.end(html);

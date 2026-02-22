@@ -61,3 +61,32 @@ document.addEventListener("click", async (e) => {
     alert("Chyba: " + JSON.stringify(err.data));
   }
 });
+
+//Filtrování na hlavní stránce
+document.addEventListener("DOMContentLoaded", () => {
+
+  const minSlider = document.getElementById("minSlider");
+  const maxSlider = document.getElementById("maxSlider");
+  const minValue = document.getElementById("minValue");
+  const maxValue = document.getElementById("maxValue");
+
+  if (!minSlider || !maxSlider) return;
+
+  minValue.textContent = minSlider.value;
+  maxValue.textContent = maxSlider.value;
+
+  minSlider.addEventListener("input", () => {
+    if (Number(minSlider.value) > Number(maxSlider.value)) {
+      minSlider.value = maxSlider.value;
+    }
+    minValue.textContent = minSlider.value;
+  });
+
+  maxSlider.addEventListener("input", () => {
+    if (Number(maxSlider.value) < Number(minSlider.value)) {
+      maxSlider.value = minSlider.value;
+    }
+    maxValue.textContent = maxSlider.value;
+  });
+
+});

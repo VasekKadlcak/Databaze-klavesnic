@@ -1,9 +1,121 @@
 [
   {
     "id": 1,
-    "znacka": "dfgfdgdf",
+    "znacka": "Logitech",
+    "model": "G Pro X",
+    "typ": "Mechanická",
+    "cena": 3200
+  },
+  {
+    "id": 2,
+    "znacka": "Razer",
+    "model": "BlackWidow V4",
+    "typ": "Mechanická",
+    "cena": 4599
+  },
+  {
+    "id": 3,
+    "znacka": "HyperX",
+    "model": "Alloy Origins",
+    "typ": "Mechanická",
+    "cena": 2799
+  },
+  {
+    "id": 4,
+    "znacka": "SteelSeries",
+    "model": "Apex 5",
+    "typ": "Hybridní",
+    "cena": 3299
+  },
+  {
+    "id": 5,
+    "znacka": "Corsair",
+    "model": "K70 RGB Pro",
+    "typ": "Mechanická",
+    "cena": 4299
+  },
+  {
+    "id": 6,
+    "znacka": "Asus",
+    "model": "ROG Strix Scope",
+    "typ": "Mechanická",
+    "cena": 3899
+  },
+  {
+    "id": 7,
+    "znacka": "Redragon",
+    "model": "K552 Kumara",
+    "typ": "Mechanická",
+    "cena": 1299
+  },
+  {
+    "id": 8,
+    "znacka": "Genesis",
+    "model": "Thor 300",
+    "typ": "Mechanická",
+    "cena": 1599
+  },
+  {
+    "id": 9,
+    "znacka": "Dell",
+    "model": "KB216",
+    "typ": "Membránová",
+    "cena": 499
+  },
+  {
+    "id": 10,
+    "znacka": "Microsoft",
+    "model": "Ergonomic Keyboard",
+    "typ": "Membránová",
+    "cena": 1399
+  },
+  {
+    "id": 11,
+    "znacka": "Razer",
+    "model": "Huntsman V2",
+    "typ": "Optická",
+    "cena": 4999
+  },
+  {
+    "id": 12,
+    "znacka": "Logitech",
+    "model": "G915 Lightspeed",
+    "typ": "Mechanická",
+    "cena": 5999
+  },
+  {
+    "id": 13,
+    "znacka": "SteelSeries",
+    "model": "Apex Pro",
+    "typ": "Mechanická",
+    "cena": 5499
+  },
+  {
+    "id": 14,
+    "znacka": "Corsair",
+    "model": "K55 RGB",
+    "typ": "Membránová",
+    "cena": 1499
+  },
+  {
+    "id": 15,
+    "znacka": "Keychron",
+    "model": "K8 Pro",
+    "typ": "Mechanická",
+    "cena": 3199
+  },
+  {
+    "id": 16,
+    "znacka": "asdas",
     "model": "Huntsman K70",
     "typ": "Mechanická",
-    "cena": 654564
+    "cena": 545
+  },
+  {
+    "id": 17,
+    "znacka": "Razer",
+    "model": "Hyperlight 2000",
+    "typ": "Membránová",
+    "cena": 7800
   }
 ]
