@@ -7,27 +7,6 @@
     "cena": 3200
   },
   {
-    "id": 2,
-    "znacka": "Razer",
-    "model": "BlackWidow V4",
-    "typ": "Mechanická",
-    "cena": 4599
-  },
-  {
-    "id": 3,
-    "znacka": "HyperX",
-    "model": "Alloy Origins",
-    "typ": "Mechanická",
-    "cena": 2799
-  },
-  {
-    "id": 4,
-    "znacka": "SteelSeries",
-    "model": "Apex 5",
-    "typ": "Hybridní",
-    "cena": 3299
-  },
-  {
     "id": 5,
     "znacka": "Corsair",
     "model": "K70 RGB Pro",
@@ -56,18 +35,11 @@
     "cena": 1599
   },
   {
-    "id": 9,
-    "znacka": "Dell",
-    "model": "KB216",
-    "typ": "Membránová",
-    "cena": 499
-  },
-  {
     "id": 10,
     "znacka": "Microsoft",
     "model": "Ergonomic Keyboard",
     "typ": "Membránová",
-    "cena": 1399
+    "cena": 1800
   },
   {
     "id": 11,
@@ -117,5 +89,12 @@
     "model": "Hyperlight 2000",
     "typ": "Membránová",
     "cena": 7800
+  },
+  {
+    "id": 18,
+    "znacka": "Razer",
+    "model": "Huntsman K70",
+    "typ": "Mechanická",
+    "cena": 8444
   }
 ]

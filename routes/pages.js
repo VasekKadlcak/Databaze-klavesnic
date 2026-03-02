@@ -80,11 +80,16 @@ function handlePages(req, res) {
         "utf-8"
       );
 
-      let html = template
-        .replace("{{klavesnice}}", cards)
-        .replace(/{{maxCenaDB}}/g, maxCenaDB)
-        .replace(/{{minAktualni}}/g, minCena ?? 0)
-        .replace(/{{maxAktualni}}/g, maxCena ?? maxCenaDB);
+  let html = template
+    .replace("{{klavesnice}}", cards)
+    .replace(/{{maxCenaDB}}/g, maxCenaDB)
+    .replace(/{{minAktualni}}/g, minCena ?? 0)
+    .replace(/{{maxAktualni}}/g, maxCena ?? maxCenaDB)
+    .replace(/{{selectedVse}}/g, !typ || typ === "Vše" ? "selected" : "")
+    .replace(/{{selectedMechanicka}}/g, typ === "Mechanická" ? "selected" : "")
+    .replace(/{{selectedMembranova}}/g, typ === "Membránová" ? "selected" : "")
+    .replace(/{{selectedOpticka}}/g, typ === "Optická" ? "selected" : "")
+    .replace(/{{selectedHybridni}}/g, typ === "Hybridní" ? "selected" : "");
 
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
       res.end(html);

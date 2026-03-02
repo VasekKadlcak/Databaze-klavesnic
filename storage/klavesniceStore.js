@@ -63,6 +63,7 @@ function remove(id) {
   return odebrana;
 }
 
+//pro aktualizace dat
 module.exports = {
   getAll,
   getById,

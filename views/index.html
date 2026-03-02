@@ -48,6 +48,10 @@
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.06);
       transition: 0.2s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card:hover {
@@ -79,6 +83,7 @@
     .actions {
       display: flex;
       justify-content: space-between;
+      margin-top: auto;
     }
 
     .actions a {
@@ -98,6 +103,8 @@
     }
 
     .edit {
+      position: absolute;
+      right: 20px;
       background: #2563eb;
       color: white;
     }
@@ -105,14 +112,19 @@
       background: #1d4ed8;
       transition: 0.1s ease-in;
     }
-    .delete{
-
+    .delete {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+    
       background: #ef4444;
       color: white;
       border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
     .delete:hover {
       background: #dc2626;
@@ -194,11 +206,11 @@
       </div>
 
       <select name="typ">
-        <option value="Vše">Všechny typy</option>
-        <option value="Mechanická">Mechanická</option>
-        <option value="Membránová">Membránová</option>
-        <option value="Optická">Optická</option>
-        <option value="Hybridní">Hybridní</option>
+        <option value="Vše" {{selectedVse}}>Všechny typy</option>
+        <option value="Mechanická" {{selectedMechanicka}}>Mechanická</option>
+        <option value="Membránová" {{selectedMembranova}}>Membránová</option>
+        <option value="Optická" {{selectedOpticka}}>Optická</option>
+        <option value="Hybridní" {{selectedHybridni}}>Hybridní</option>
       </select>
 
       <button type="submit">Filtrovat</button>

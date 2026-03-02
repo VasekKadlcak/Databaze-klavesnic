@@ -62,6 +62,18 @@ document.addEventListener("click", async (e) => {
   }
 });
 
+//Potrvzení delete
+document.addEventListener("submit", function (e) {
+  const form = e.target;
+
+  if (form.action.includes("/delete/")) {
+    const potvrdit = confirm("Opravdu chcete smazat tuto klávesnici?");
+    if (!potvrdit) {
+      e.preventDefault();
+    }
+  }
+});
+
 //Filtrování na hlavní stránce
 document.addEventListener("DOMContentLoaded", () => {
 

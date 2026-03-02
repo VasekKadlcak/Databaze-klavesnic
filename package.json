@@ -1,6 +1,6 @@
 {
-  "name": "projekt",
-  "version": "1.0.0",
+  "name": "databaze-klavesnic",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
