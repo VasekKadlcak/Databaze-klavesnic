@@ -96,5 +96,12 @@
     "model": "Huntsman K70",
     "typ": "Mechanická",
     "cena": 8444
+  },
+  {
+    "id": 19,
+    "znacka": "Hodný",
+    "model": "Marek",
+    "typ": "Membránová",
+    "cena": 4
   }
 ]

@@ -184,6 +184,8 @@
     
     input[type="range"] {
       width: 180px;
+      margin: 0;
+      padding: 0;
       accent-color: #00bcd4;
     }
   </style>
@@ -197,12 +199,12 @@
 
       <div class="range-group">
         <label>Min cena: <span id="minValue">{{minAktualni}}</span> Kč</label>
-        <input type="range" name="minCena" min="0" max="{{maxCenaDB}}" step="10" value="{{minAktualni}}" id="minSlider">
+        <input type="range" name="minCena" min="0" max="{{maxCenaDB}}" step="1" value="{{minAktualni}}" id="minSlider">
       </div>
 
       <div class="range-group">
         <label>Max cena: <span id="maxValue">{{maxAktualni}}</span> Kč</label>
-        <input type="range" name="maxCena" min="0" max="{{maxCenaDB}}" step="10" value="{{maxAktualni}}" id="maxSlider">
+        <input type="range" name="maxCena" min="0" max="{{maxCenaDB}}" step="1" value="{{maxAktualni}}" id="maxSlider">
       </div>
 
       <select name="typ">
